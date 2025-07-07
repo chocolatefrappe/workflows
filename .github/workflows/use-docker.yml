@@ -4,13 +4,14 @@ on:
   workflow_call:
     inputs:
       targets:
-        description: 'List of targets to build'
-        required: true
         type: string
+        description: 'List of targets to build'
+        required: false
+        default: 'default'
       push:
+        type: boolean
         description: 'Push built images to registry'
         required: false
-        type: boolean
         default: true
 
 concurrency:
